@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 23% 5%; /* Dark Blue/Gray */
+    --foreground: 45 35% 90%; /* Light Gold/Off-white */
+
+    --card: 220 23% 7%; /* Slightly Lighter Dark Blue/Gray */
+    --card-foreground: 45 35% 90%;
+
+    --popover: 220 15% 10%; /* Darker for popovers, less saturated */
+    --popover-foreground: 45 35% 90%;
+
+    --primary: 45 69% 58%; /* Gold/Yellow */
+    --primary-foreground: 220 23% 5%; /* Dark for text on primary */
+
+    --secondary: 220 23% 12%; /* Medium Dark Blue/Gray */
+    --secondary-foreground: 45 35% 90%;
+
+    --muted: 220 23% 15%; /* Muted Dark Blue/Gray */
+    --muted-foreground: 45 10% 60%; /* Muted Gold/Gray */
+
+    --accent: 45 69% 58%; /* Gold/Yellow (same as primary for strong accent) */
+    --accent-foreground: 220 23% 5%; /* Dark for text on accent */
+    
+    /* Specific accent for sidebar active item background as per previous user feedback */
+    --sidebar-active-bg: 220 23% 8%; /* Darker, distinct from main accent */
+    --sidebar-active-fg: 45 35% 85%; /* Brighter text for active sidebar item */
+
+
+    --destructive: 0 70% 55%; /* Brighter Red */
+    --destructive-foreground: 0 0% 100%; /* White text on destructive */
+
+    --border: 220 23% 15%; /* Muted Dark Blue/Gray for borders */
+    --input: 220 23% 10%; /* Darker input background */
+    --ring: 45 69% 58%; /* Gold/Yellow for focus rings */
+
+    --radius: 0.75rem;
+
+    /* Chart colors can be adjusted if charts are used, keeping with the theme */
+    --chart-1: hsl(var(--primary));
+    --chart-2: hsl(var(--primary) / 0.8);
+    --chart-3: hsl(var(--primary) / 0.6);
+    --chart-4: hsl(var(--primary) / 0.4);
+    --chart-5: hsl(var(--primary) / 0.2);
+
+    /* Sidebar specific colors from user's CSS */
+    --sidebar-background: 220 23% 4%;
+    --sidebar-foreground: 45 35% 85%;
+    --sidebar-primary: 45 69% 58%;
+    --sidebar-primary-foreground: 220 23% 5%;
+    --sidebar-accent: 220 23% 8%; /* Background for active/hovered sidebar items */
+    --sidebar-accent-foreground: 45 35% 85%; /* Text for active/hovered sidebar items */
+    --sidebar-border: 220 23% 12%;
+    --sidebar-ring: 45 69% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), sans-serif; /* Default to Inter */
+    background-image: 
+      radial-gradient(circle at 25% 25%, hsl(var(--primary) / 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 75% 75%, hsl(var(--primary) / 0.03) 0%, transparent 40%);
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll from gradients */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), serif; /* Playfair for headings */
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    background: hsl(var(--card) / 0.6); /* Use theme variable for background */
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    border: 1px solid hsl(var(--primary) / 0.15);
+    box-shadow: 0 8px 32px 0 hsl(var(--background) / 0.3);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--foreground)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Fallback for browsers that don't support background-clip: text */
+    color: hsl(var(--primary));
+  }
+  
+  .hover-lift {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px hsl(var(--primary) / 0.15);
+  }
+
+  .soft-shadow {
+    box-shadow: 0 4px 6px -1px hsl(var(--background) / 0.1), 0 2px 4px -2px hsl(var(--background) / 0.1);
+  }
+
+  .primary-glow-button {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 ease-in-out transform hover:scale-105;
+  }
+
+  .input-glow-focus {
+    @apply focus:border-primary focus:ring-2 focus:ring-primary/50 transition-all duration-200;
+  }
+}
