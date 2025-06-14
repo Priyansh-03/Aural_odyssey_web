@@ -15,9 +15,10 @@
   <img src="https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript" alt="TypeScript">
   <img src="https://img.shields.io/badge/Genkit-1.x-orange?logo=firebase&logoColor=white" alt="Genkit">
   <img src="https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/VS_Code-IDE-blue?logo=visualstudiocode" alt="VS Code">
 </p>
 
-Welcome to Aural Odyssey, your personal AI-powered audiobook and reading companion! This application transforms your reading experience by allowing you to interact with your books in new and engaging ways, including intelligent chat, deep content analysis, and immersive audio narration.
+Welcome to Aural Odyssey, your personal AI-powered audiobook and reading companion! This application, built with Next.js and developed primarily in VS Code, transforms your reading experience by allowing you to interact with your books in new and engaging ways, including intelligent chat, deep content analysis, and immersive audio narration.
 
 ## ✨ Features
 
@@ -60,6 +61,8 @@ Welcome to Aural Odyssey, your personal AI-powered audiobook and reading compani
     *   Genkit (Firebase Genkit)
     *   Google Gemini Models (via `@genkit-ai/googleai`)
     *   TypeScript for AI flows and tools
+*   **Development Environment:**
+    *   VS Code
 *   **Languages & Others:** TypeScript, CSS, HTML (JSX), JSON, Handlebars (for Genkit prompts)
 
 ## 📂 Project Structure
@@ -84,12 +87,13 @@ Welcome to Aural Odyssey, your personal AI-powered audiobook and reading compani
 
 ## 🚀 Getting Started
 
-Follow these instructions to get Aural Odyssey up and running on your local machine.
+Follow these instructions to get Aural Odyssey up and running on your local machine using VS Code.
 
 ### Prerequisites
 
 *   **Node.js:** v18 or later recommended (includes npm). Download from [nodejs.org](https://nodejs.org/).
 *   **Git:** For cloning the repository. Download from [git-scm.com](https://git-scm.com/).
+*   **VS Code:** Your Integrated Development Environment. Download from [code.visualstudio.com](https://code.visualstudio.com/).
 *   **Google API Key:** A valid API key for Google Gemini models.
     *   You can obtain one from [Google AI Studio](https://aistudio.google.com/app/apikey) or Google Cloud.
 
@@ -103,7 +107,11 @@ Follow these instructions to get Aural Odyssey up and running on your local mach
     ```
     (Replace `<your-repository-url>` with the actual URL of your GitHub repository)
 
-2.  **Install Dependencies:**
+2.  **Open in VS Code:**
+    Launch VS Code and open the cloned project folder (`File > Open Folder...`).
+
+3.  **Install Dependencies:**
+    Open the integrated terminal in VS Code (`View > Terminal` or `Ctrl+\`` / `Cmd+\``).
     Using npm:
     ```bash
     npm install
@@ -113,27 +121,27 @@ Follow these instructions to get Aural Odyssey up and running on your local mach
     yarn install
     ```
 
-3.  **Set Up Environment Variables:**
-    *   Create a new file named `.env` in the root directory of the project.
+4.  **Set Up Environment Variables:**
+    *   Create a new file named `.env` in the root directory of the project (if it doesn't exist).
     *   Add your Google API Key to this file:
         ```env
         GOOGLE_API_KEY=YOUR_ACTUAL_GEMINI_API_KEY
         ```
-    *   Replace `YOUR_ACTUAL_GEMINI_API_KEY` with your actual API key. **Do not commit this file to Git.**
+    *   Replace `YOUR_ACTUAL_GEMINI_API_KEY` with your actual API key. **Do not commit this file to Git if your repository is public.**
 
 ### Running the Application Locally
 
-You need to run two development servers concurrently: one for the Next.js frontend and one for the Genkit AI backend.
+You need to run two development servers concurrently from VS Code terminals: one for the Next.js frontend and one for the Genkit AI backend.
 
 1.  **Start the Next.js Frontend:**
-    Open a terminal window (or a new tab in your existing terminal), navigate to the project root, and run:
+    In a VS Code terminal window (or a new tab), navigate to the project root, and run:
     ```bash
     npm run dev
     ```
     This will typically start the frontend on `http://localhost:9002`. Check your terminal output for the exact URL.
 
 2.  **Start the Genkit Development Server:**
-    Open *another* terminal window (or tab), navigate to the project root, and run:
+    Open *another* VS Code terminal window (or tab), navigate to the project root, and run:
     ```bash
     npm run genkit:dev
     ```
@@ -172,10 +180,10 @@ Navigate through the app using the sidebar on the left.
 
 ## 🤝 Contributing
 
-This project is designed for development within Firebase Studio and locally.
-1.  Ensure you have the necessary Firebase and Genkit tools set up if working outside Studio.
+This project is set up for local development using VS Code.
+1.  Ensure you have the necessary Node.js and Genkit tools set up.
 2.  Follow the setup and run instructions above.
-3.  Make your changes and test thoroughly.
+3.  Make your changes in VS Code and test thoroughly.
 4.  If using Git, commit your changes and follow your repository's guidelines for pull requests or contributions.
 
 ---
